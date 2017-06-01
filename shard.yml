@@ -1,0 +1,13 @@
+name: elodin
+version: 1.0.0
+
+authors:
+  - Ben Christianson <thhuntertgm@gmail.com>
+
+targets:
+  elodin:
+    main: src/elodin.cr
+
+crystal: 0.22.0
+
+license: MIT
