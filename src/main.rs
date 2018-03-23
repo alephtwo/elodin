@@ -1,6 +1,6 @@
-extern crate rand;
 extern crate inflector;
-use rand::{thread_rng, seq};
+extern crate rand;
+use rand::{seq, thread_rng};
 use inflector::Inflector;
 
 fn main() {
