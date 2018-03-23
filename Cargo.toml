@@ -4,5 +4,6 @@ version = "0.2.0"
 authors = ["Ben Christianson <thhuntertgm@gmail.com>"]
 
 [dependencies]
+clap = "2.31"
 Inflector = "0.11"
 rand = "0.4"
