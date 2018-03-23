@@ -11,10 +11,10 @@ fn main() {
 
 fn generate_word (text: &str) -> String {
     let words = text.trim().split("\n").collect();
-    choose_word(words).to_title_case()
+    choose_random_word(words).to_title_case()
 }
 
-fn choose_word(words: Vec<&str>) -> &str {
+fn choose_random_word(words: Vec<&str>) -> &str {
     let mut rng = thread_rng();
     seq::sample_iter(&mut rng, words, 1).unwrap()[0]
 }
