@@ -24,7 +24,7 @@ fn main() {
         .iter()
         .map(|w| {
             if slug {
-                w.to_lowercase()
+                w.to_lowercase().replace(" ", "-").replace("'", "")
             } else {
                 w.to_title_case()
             }
