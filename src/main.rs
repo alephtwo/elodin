@@ -8,7 +8,7 @@ use rand::{seq, thread_rng};
 
 fn main() {
     let matches = App::new("elodin")
-        .version("0.3.0")
+        .version("0.4.0")
         .author("Ben Christianson <thhuntertgm@gmail.com>")
         .arg(
             Arg::with_name("slug")
