@@ -1,9 +1,9 @@
 [package]
 name = "elodin"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Ben Christianson <thhuntertgm@gmail.com>"]
 
 [dependencies]
-clap = "2.31"
-Inflector = "0.11"
-rand = "0.4"
+clap = "2.32.0"
+Inflector = "0.11.3"
+rand = "0.6.4"

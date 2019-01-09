@@ -4,7 +4,8 @@ extern crate rand;
 
 use clap::{App, Arg};
 use inflector::Inflector;
-use rand::{seq, thread_rng};
+use rand::thread_rng;
+use rand::seq::SliceRandom;
 
 fn main() {
     let matches = App::new("elodin")
@@ -47,5 +48,5 @@ fn choose_word_from_file(text: &str) -> &str {
 
 fn choose_random_word(words: Vec<&str>) -> &str {
     let mut rng = thread_rng();
-    seq::sample_iter(&mut rng, words, 1).unwrap()[0]
+    words.choose(&mut rng).unwrap_or(&"")
 }
