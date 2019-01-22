@@ -2,26 +2,38 @@
 
 Elodin is a fast way of generating short names of the form `ADJECTIVE NOUN`.
 
-## Build
+## Installation
 
-```sh
-$ cargo build
-```
+Either build it using `cargo` or grab the latest release binary from
+[the releases page](https://github.com/alephtwo/elodin/releases/latest).
 
 ## Usage
 
+Primarily, `elodin` is useful for generating names like so:
+
 ```sh
 $ elodin
+Atmospherical Sheik
 ```
 
-## Clipboard
+However, it can also be used to generate slugs:
+
+```sh
+$ elodin -s
+unthought-intrusion
+```
+
+### Clipboard
 
 When combined with a clipboard manager, this becomes very powerful.
 For example, with `xclip`:
+
 ```sh
 ./elodin | xclip -sel clip
 ```
+
 And on OSX:
+
 ```sh
 ./elodin | pbcopy
 ```
