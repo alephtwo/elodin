@@ -7,6 +7,10 @@ Elodin is a fast way of generating short names of the form `ADJECTIVE NOUN`.
 Either build it using `cargo` or grab the latest release binary from
 [the releases page](https://github.com/alephtwo/elodin/releases/latest).
 
+## Web Demo
+
+A limited feature set is [available online!](https://alephtwo.github.io/elodin/)
+
 ## Usage
 
 Primarily, `elodin` is useful for generating names like so:
