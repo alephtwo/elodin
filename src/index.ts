@@ -11,8 +11,12 @@ declare global {
 
 window.generate = () => {
   const word = makeWord()
-  document.getElementsByClassName('generate')[0].textContent = word
   Clipboard.copy(word)
+
+  const button = document.getElementById('generate-button')
+  if (button) {
+    button.textContent = word
+  }
 }
 
 const makeWord = (): string => [adjectives, nouns]
