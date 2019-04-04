@@ -1,32 +1,32 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const typescript = {
-  test: /\.tsx?$/,
-  use: 'awesome-typescript-loader'
-}
+const rules = {
+  typescript: {
+    test: /\.tsx?$/,
+    use: 'awesome-typescript-loader'
+  },
+  css: {
+    test: /\.css$/,
+    use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader']
+  }
+};
 
-const css = {
-  test: /\.css$/,
-  use: [ 'style-loader', 'css-loader' ]
-}
-
-const html = new HtmlWebpackPlugin({
-  template: 'src/index.html'
-});
+const plugins = {
+  html: new HtmlWebpackPlugin({
+    template: 'src/index.html'
+  }),
+  extractCss: new MiniCssExtractPlugin({
+    filename: 'app.css',
+    chunkFilename: '[id].css'
+  })
+};
 
 module.exports = {
-  resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
-  },
   entry: './src/index.ts',
   devtool: 'source-map',
-  output: {
-    filename: 'app.js',
-    path: path.resolve(__dirname)
-  },
-  module: {
-    rules: [typescript, css]
-  },
-  plugins: [html]
-}
+  output: { filename: 'app.js', path: __dirname },
+  module: { rules: [ rules.typescript, rules.css ] },
+  plugins: [ plugins.html, plugins.extractCss ],
+  resolve: { extensions: [ '.tsx', '.ts', '.js' ] }
+};

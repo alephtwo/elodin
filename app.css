@@ -1,0 +1,41 @@
+body {
+  background:
+    linear-gradient(#208888, transparent),
+    linear-gradient(90deg, #E3A935, transparent),
+    linear-gradient(-90deg, #E38435, transparent);
+  background-blend-mode: screen;
+
+  font-family: sans-serif;
+}
+
+div.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button {
+  text-align: center;
+  width: 50%;
+  padding: 0.85em 1em;
+  font-size: 45px;
+  border-radius: 3px;
+  font-family: sans-serif;
+  color: #EAEAEA;
+  background-color: #305098;
+  outline: 0;
+  cursor: pointer;
+  box-sizing: inherit;
+  text-decoration: none;
+  transition: background-color 0.25s ease-out,color 0.25s ease-out;
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2) inset;
+}
+
+.button:hover {
+  background-color: #0D2867
+}
+
+
+/*# sourceMappingURL=app.css.map*/
