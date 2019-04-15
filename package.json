@@ -1,0 +1,18 @@
+{
+  "name": "elodin-plugin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "tslint --project .",
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "5.2.1",
+    "tslint": "^5.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "3.4.3",
+    "webpack": "4.30.0",
+    "webpack-cli": "3.3.0"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "manifest_version": 2,
+  "name": "elodin-plugin",
+  "version": "1.0.0",
+  "description": "generate some nonsense."
+}
