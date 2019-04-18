@@ -3,17 +3,18 @@
   "name": "elodin-plugin",
   "version": "1.0.0",
   "description": "generate some nonsense.",
-
   "background": {
     "scripts": [ "index.js" ]
   },
-  "browser_action": {
-    "default_icon": {
-      "16": "icons/16.png",
-      "32": "icons/32.png"
-    }
-  },
   "permissions": [
     "notifications"
-  ]
+  ],
+  "commands": {
+    "generate-name": {
+      "description": "add a name to the clipboard",
+      "suggested_key": {
+        "default": "Ctrl+E"
+      }
+    }
+  }
 }

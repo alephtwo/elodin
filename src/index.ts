@@ -5,18 +5,28 @@ import { sample } from 'lodash';
 import * as nouns from './words/nouns.json';
 import * as adjectives from './words/adjectives.json';
 
+type CommandType = 'generate-name'
+
 const generateName = () => [adjectives, nouns]
   .map((list: Array<string>) => sample(list))
   .map((word: string) => titleCase(word))
   .join(' ');
 
-browser.browserAction.onClicked.addListener(() => {
+const generateAndCopyName = () => {
   const name = generateName();
 
   Clipboard.copy(name);
   browser.notifications.create('elodin', {
-    title: 'elodin',
+    title: 'it shall henceforth be known as',
     type: 'basic',
     message: name
   });
-});
+};
+
+browser.commands.onCommand.addListener((command: CommandType) => {
+  switch(command) {
+    case 'generate-name':
+      generateAndCopyName();
+      break;
+  }
+})
