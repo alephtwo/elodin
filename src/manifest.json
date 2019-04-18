@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "elodin-plugin",
+  "version": "1.0.0",
+  "description": "generate some nonsense.",
+
+  "background": {
+    "scripts": [ "index.js" ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    }
+  }
+}
