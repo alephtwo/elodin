@@ -1,3 +1,7 @@
-const hello = () => alert('Hello, World!');
+const openMDN = () => {
+  browser.tabs.create({
+    url: 'https://developer.mozilla.org'
+  }).catch();
+};
 
-hello();
+browser.browserAction.onClicked.addListener(openMDN);

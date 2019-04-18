@@ -1,6 +1,10 @@
 {
   "exclude": [ "node_modules" ],
   "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/web-ext-types"
+    ],
     "outDir": "./dist",
     "lib": ["dom", "es2016"],
     "module": "commonjs",
