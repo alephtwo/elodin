@@ -4,7 +4,10 @@
   "version": "1.0.0",
   "description": "generate some nonsense.",
   "background": {
-    "scripts": [ "index.js" ]
+    "scripts": [
+      "browser-polyfill.js",
+      "index.js"
+    ]
   },
   "permissions": [
     "notifications"

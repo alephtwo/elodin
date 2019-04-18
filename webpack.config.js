@@ -13,7 +13,8 @@ const plugins = {
   clean: new CleanWebpackPlugin(),
   copy: new CopyPlugin([
     { from: './src/manifest.json' },
-    { from: './src/icons', to: 'icons' }
+    { from: './src/images', to: 'images' },
+    { from: './node_modules/webextension-polyfill/dist/browser-polyfill.js' }
   ])
 };
 
@@ -23,6 +24,7 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist')
   },
+  devtool: 'source-map',
   module: {
     rules: [
       rules.typescript

@@ -19,7 +19,8 @@ const generateAndCopyName = () => {
   browser.notifications.create('elodin', {
     title: 'it shall henceforth be known as',
     type: 'basic',
-    message: name
+    message: name,
+    iconUrl: './images/gnome.png'
   });
 };
 
@@ -28,5 +29,5 @@ browser.commands.onCommand.addListener((command: CommandType) => {
     case 'generate-name':
       generateAndCopyName();
       break;
-  }
-})
+  };
+});

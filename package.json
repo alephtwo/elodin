@@ -9,10 +9,13 @@
   },
   "devDependencies": {
     "@types/change-case": "^2.3.1",
+    "@types/chrome": "^0.0.82",
     "@types/lodash": "^4.14.123",
     "awesome-typescript-loader": "5.2.1",
     "clean-webpack-plugin": "^2.0.1",
     "copy-webpack-plugin": "^5.0.2",
+    "install": "^0.12.2",
+    "npm": "^6.9.0",
     "tslint": "^5.16.0",
     "tslint-config-standard": "^8.0.1",
     "typescript": "3.4.3",
@@ -23,6 +26,7 @@
   "dependencies": {
     "change-case": "^3.1.0",
     "lodash": "^4.17.11",
-    "ts-clipboard": "^1.0.17"
+    "ts-clipboard": "^1.0.17",
+    "webextension-polyfill": "^0.4.0"
   }
 }
