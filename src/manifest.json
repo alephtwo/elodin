@@ -5,7 +5,6 @@
   "description": "generate some nonsense.",
   "background": {
     "scripts": [
-      "browser-polyfill.js",
       "index.js"
     ]
   },
