@@ -5,7 +5,7 @@ import { sample } from 'lodash';
 import * as nouns from './words/nouns.json';
 import * as adjectives from './words/adjectives.json';
 
-type CommandType = 'generate-name'
+type CommandType = 'generate-name';
 
 const generateName = () => [adjectives, nouns]
   .map((list: Array<string>) => sample(list))
@@ -21,13 +21,13 @@ const generateAndCopyName = () => {
     type: 'basic',
     message: name,
     iconUrl: './images/gnome.png'
-  });
+  }).catch();
 };
 
 browser.commands.onCommand.addListener((command: CommandType) => {
-  switch(command) {
+  switch (command) {
     case 'generate-name':
       generateAndCopyName();
       break;
-  };
+  }
 });

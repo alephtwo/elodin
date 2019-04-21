@@ -1,5 +1,5 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const rules = {
@@ -14,7 +14,6 @@ const plugins = {
   copy: new CopyPlugin([
     { from: './src/manifest.json' },
     { from: './src/images', to: 'images' },
-    { from: './node_modules/webextension-polyfill/dist/browser-polyfill.js' }
   ])
 };
 
