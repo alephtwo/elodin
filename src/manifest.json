@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "elodin-plugin",
+  "name": "Elodin",
   "version": "1.0.0",
-  "description": "generate some nonsense.",
+  "description": "Add a keyboard shortcut to generate a random name.",
   "background": {
     "scripts": [
       "index.js"
@@ -13,7 +13,7 @@
   ],
   "commands": {
     "generate-name": {
-      "description": "add a name to the clipboard",
+      "description": "Add a name to the clipboard",
       "suggested_key": {
         "default": "Ctrl+E"
       }
