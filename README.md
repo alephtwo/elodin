@@ -6,7 +6,17 @@ other situation where you need a name but don't care how ridiculous it is).
 
 ## Build Instructions
 
-Building is easy:
+Building the webextension is easy:
+
+```bash
+./package.sh
+```
+
+The webextension is bundled in `elodin.zip`, ready for submission.
+
+### Dev Build
+
+Building is also easy for development:
 
 ```bash
 # With Yarn
