@@ -3,28 +3,35 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/alephtwo/elodin"
+  },
+  "author": {
+    "name": "Ben Christianson",
+    "email": "thhuntertgm@gmail.com"
+  },
   "scripts": {
     "lint": "tslint --project .",
     "build": "webpack --mode production"
   },
   "devDependencies": {
-    "@types/change-case": "^2.3.1",
-    "@types/chrome": "^0.0.83",
-    "@types/lodash": "^4.14.123",
+    "@types/change-case": "2.3.1",
+    "@types/chrome": "0.0.83",
+    "@types/lodash": "4.14.123",
     "awesome-typescript-loader": "5.2.1",
-    "clean-webpack-plugin": "^2.0.1",
-    "copy-webpack-plugin": "^5.0.2",
-    "install": "^0.12.2",
-    "npm": "^6.9.0",
-    "tslint": "^5.16.0",
-    "tslint-config-standard": "^8.0.1",
+    "clean-webpack-plugin": "2.0.1",
+    "copy-webpack-plugin": "5.0.2",
+    "install": "0.12.2",
+    "npm": "6.9.0",
+    "tslint": "5.16.0",
+    "tslint-config-standard": "8.0.1",
     "typescript": "3.4.3",
     "webpack": "4.30.0",
-    "webpack-cli": "3.3.0"
+    "webpack-cli": "3.3.1"
   },
   "dependencies": {
-    "change-case": "^3.1.0",
-    "lodash": "^4.17.11",
-    "ts-clipboard": "^1.0.17"
+    "change-case": "3.1.0",
+    "lodash": "4.17.11",
+    "ts-clipboard": "1.0.17"
   }
 }
