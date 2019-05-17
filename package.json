@@ -33,7 +33,6 @@
   "dependencies": {
     "change-case": "3.1.0",
     "lodash": "4.17.11",
-    "ts-clipboard": "1.0.17",
-    "webextension-polyfill": "0.4.0"
+    "ts-clipboard": "1.0.17"
   }
 }

@@ -12,31 +12,39 @@ const rules = {
 const plugins = {
   clean: new CleanWebpackPlugin(),
   copy: new CopyPlugin([
-    { from: './src/manifest.json' },
-    { from: './src/images', to: 'images' },
-    { from: './node_modules/webextension-polyfill/dist/browser-polyfill.js' }
+    { from: path.resolve(__dirname, 'src', 'manifest.json') },
+    { from: path.resolve(__dirname, 'src', 'images'), to: 'images' }
   ])
 };
 
-module.exports = {
-  entry: './src/index.ts',
-  output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist')
-  },
-  module: {
-    rules: [
-      rules.typescript
-    ]
-  },
-  plugins: [
-    plugins.clean,
-    plugins.copy
-  ],
-  resolve: {
-    extensions: [
-      '.ts',
-      '.js'
-    ]
-  }
+const buildConfig = (entry, name) => {
+
+
+  return {
+    entry: path.resolve(__dirname, 'src', entry),
+    output: {
+      filename: 'index.js',
+      path: path.resolve(__dirname, 'dist', name)
+    },
+    module: {
+      rules: [
+        rules.typescript
+      ]
+    },
+    plugins: [
+      plugins.clean,
+      plugins.copy
+    ],
+    resolve: {
+      extensions: [
+        '.ts',
+        '.js'
+      ]
+    }
+  };
 };
+
+module.exports = [
+  buildConfig('firefox.ts', 'firefox'),
+  buildConfig('chrome.ts', 'chrome')
+];
