@@ -5,7 +5,6 @@
   "description": "Add a keyboard shortcut to generate a random name.",
   "background": {
     "scripts": [
-      "browser-polyfill.js",
       "index.js"
     ]
   },
