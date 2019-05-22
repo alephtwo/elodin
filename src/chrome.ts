@@ -1,10 +1,10 @@
-import { keybindListener } from './logic/keybindListener';
+import { initializeExtension } from './logic/initializeExtension';
 
-const notify = (
-  name: string,
-  bundle: chrome.notifications.NotificationOptions
-) => {
-  chrome.notifications.create(name, bundle);
-};
-
-chrome.commands.onCommand.addListener(keybindListener(notify));
+initializeExtension({
+  notify: (name: string, bundle: chrome.notifications.NotificationOptions) => {
+    chrome.notifications.create(name, bundle);
+  },
+  addListener: (listener: any) => {
+    chrome.commands.onCommand.addListener(listener);
+  }
+});

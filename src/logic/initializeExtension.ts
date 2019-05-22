@@ -1,9 +1,20 @@
 import { Clipboard } from 'ts-clipboard';
 import { generateName } from './generateName';
-
 type CommandType = 'generate-name';
 
-export const keybindListener = (notify: Function) => (command: CommandType) => {
+type BundleOpts = browser.notifications.NotificationOptions
+                  | chrome.notifications.NotificationOptions;
+
+interface InitializeOptions {
+  notify: (name: string, bundle: BundleOpts) => void;
+  addListener: (listener: Function) => void;
+}
+
+export const initializeExtension = (options: InitializeOptions) => {
+  options.addListener(keybindListener(options.notify));
+};
+
+const keybindListener = (notify: Function) => (command: CommandType) => {
   switch (command) {
     case 'generate-name':
       generateCopyNotify(notify);

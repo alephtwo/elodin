@@ -1,10 +1,10 @@
-import { keybindListener } from './logic/keybindListener';
+import { initializeExtension } from './logic/initializeExtension';
 
-const notify = (
-  name: string,
-  bundle: browser.notifications.NotificationOptions
-) => {
-  browser.notifications.create(name, bundle).catch();
-};
-
-browser.commands.onCommand.addListener(keybindListener(notify));
+initializeExtension({
+  notify: (name: string, bundle: browser.notifications.NotificationOptions) => {
+    browser.notifications.create(name, bundle).catch();
+  },
+  addListener: (listener: any) => {
+    browser.commands.onCommand.addListener(listener);
+  }
+});
