@@ -1,5 +1,5 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const rules = {
@@ -17,32 +17,28 @@ const plugins = {
   ])
 };
 
-const buildConfig = (entry, name) => {
-
-
-  return {
-    entry: path.resolve(__dirname, 'src', entry),
-    output: {
-      filename: 'index.js',
-      path: path.resolve(__dirname, 'dist', name)
-    },
-    module: {
-      rules: [
-        rules.typescript
-      ]
-    },
-    plugins: [
-      plugins.clean,
-      plugins.copy
-    ],
-    resolve: {
-      extensions: [
-        '.ts',
-        '.js'
-      ]
-    }
-  };
-};
+const buildConfig = (entry, name) => ({
+  entry: path.resolve(__dirname, 'src', entry),
+  output: {
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist', name)
+  },
+  module: {
+    rules: [
+      rules.typescript
+    ]
+  },
+  plugins: [
+    plugins.clean,
+    plugins.copy
+  ],
+  resolve: {
+    extensions: [
+      '.ts',
+      '.js'
+    ]
+  }
+});
 
 module.exports = [
   buildConfig('firefox.ts', 'firefox'),
