@@ -11,24 +11,21 @@
     "email": "thhuntertgm@gmail.com"
   },
   "scripts": {
-    "lint": "tslint --project .",
     "build": "webpack --mode production"
   },
   "devDependencies": {
-    "@types/chrome": "0.0.88",
-    "@types/lodash": "4.14.137",
+    "@types/chrome": "0.0.107",
+    "@types/lodash": "4.14.150",
     "awesome-typescript-loader": "5.2.1",
     "clean-webpack-plugin": "3.0.0",
-    "copy-webpack-plugin": "5.0.4",
-    "tslint": "5.19.0",
-    "tslint-config-standard": "8.0.1",
-    "typescript": "3.5.3",
+    "copy-webpack-plugin": "5.1.1",
+    "typescript": "3.8.3",
     "web-ext-types": "3.2.1",
-    "webpack": "4.39.2",
-    "webpack-cli": "3.3.7"
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11"
   },
   "dependencies": {
-    "change-case": "3.1.0",
+    "change-case": "4.1.1",
     "lodash": "4.17.15",
     "ts-clipboard": "1.0.17"
   }
