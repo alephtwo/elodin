@@ -21,5 +21,5 @@ window.generate = () => {
 
 const makeWord = (): string => [adjectives, nouns]
   .map((list: Array<string>) => _.sample(list))
-  .map((word: string) => changeCase.titleCase(word))
+  .map((word: string) => changeCase.headerCase(word))
   .join(' ');
