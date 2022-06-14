@@ -13,7 +13,7 @@ fn main() {
         .author("Ben Christianson <thhuntertgm@gmail.com>")
         .arg(
             Arg::with_name("slug")
-                .short("s")
+                .short('s')
                 .help("Generate a slug instead of a name"),
         )
         .get_matches();
