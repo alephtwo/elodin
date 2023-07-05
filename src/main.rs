@@ -1,24 +1,27 @@
+#[macro_use]
 extern crate clap;
 extern crate inflector;
 extern crate rand;
 
-use clap::{App, Arg};
+use clap::{Arg, Command};
 use inflector::Inflector;
-use rand::thread_rng;
 use rand::seq::SliceRandom;
+use rand::thread_rng;
 
 fn main() {
-    let matches = App::new("elodin")
-        .version(env!("CARGO_PKG_VERSION"))
-        .author("Ben Christianson <thhuntertgm@gmail.com>")
+    let matches = Command::new(crate_name!())
+        .about(crate_description!())
+        .version(crate_version!())
+        .author(crate_authors!())
         .arg(
-            Arg::with_name("slug")
+            Arg::new("slug")
                 .short('s')
+                .num_args(0)
                 .help("Generate a slug instead of a name"),
         )
         .get_matches();
 
-    let slug = matches.is_present("slug");
+    let slug = matches.get_flag("slug");
     let joiner = if slug { "-" } else { " " };
 
     let words: Vec<String> = generate()
