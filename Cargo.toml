@@ -4,6 +4,6 @@ version = "1.0.2"
 authors = ["Ben Christianson <thhuntertgm@gmail.com>"]
 
 [dependencies]
-clap = { version = "4.3.10", features = ["cargo"] }
-Inflector = "0.11.4"
+clap = { version = "4.4.6", features = ["cargo"] }
+inflector-plus = "0.11.7"
 rand = "0.8.5"

@@ -16,6 +16,7 @@ fn main() {
         .arg(
             Arg::new("slug")
                 .short('s')
+                .long("slug")
                 .num_args(0)
                 .help("Generate a slug instead of a name"),
         )
