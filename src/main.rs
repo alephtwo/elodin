@@ -29,7 +29,7 @@ fn main() {
         .iter()
         .map(|w| {
             if slug {
-                w.to_lowercase().replace(" ", "-").replace("'", "")
+                w.to_lowercase().replace(' ', "-").replace('\'', "")
             } else {
                 w.to_title_case()
             }
@@ -46,7 +46,7 @@ fn generate() -> Vec<&'static str> {
 }
 
 fn choose_word_from_file(text: &str) -> &str {
-    let words = text.trim().split("\n").collect();
+    let words = text.trim().split('\n').collect();
     choose_random_word(words)
 }
 
