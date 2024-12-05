@@ -1,9 +1,9 @@
 [package]
 name = "elodin"
-version = "1.0.2"
+version = "1.0.3"
 authors = ["Ben Christianson <thhuntertgm@gmail.com>"]
 
 [dependencies]
-clap = { version = "4.4.6", features = ["cargo"] }
+clap = { version = "4.5.22", features = ["cargo"] }
 inflector-plus = "0.11.7"
 rand = "0.8.5"
