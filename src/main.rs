@@ -5,8 +5,8 @@ extern crate rand;
 
 use clap::{Arg, Command};
 use inflector::Inflector;
-use rand::seq::SliceRandom;
-use rand::thread_rng;
+use rand::rng;
+use rand::seq::IndexedRandom;
 
 fn main() {
     let matches = Command::new(crate_name!())
@@ -51,6 +51,5 @@ fn choose_word_from_file(text: &str) -> &str {
 }
 
 fn choose_random_word(words: Vec<&str>) -> &str {
-    let mut rng = thread_rng();
-    words.choose(&mut rng).unwrap_or(&"")
+    words.choose(&mut rng()).unwrap_or(&"")
 }
