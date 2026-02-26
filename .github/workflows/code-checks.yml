@@ -10,8 +10,8 @@ jobs:
     name: "Test"
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@v5"
-      - uses: "actions/cache@v4"
+      - uses: "actions/checkout@v6"
+      - uses: "actions/cache@v5"
         with:
           path: |
             ~/.cargo/bin/
@@ -31,8 +31,8 @@ jobs:
     name: "Clippy"
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@v5"
-      - uses: "actions/cache@v4"
+      - uses: "actions/checkout@v6"
+      - uses: "actions/cache@v5"
         with:
           path: |
             ~/.cargo/bin/
@@ -48,7 +48,7 @@ jobs:
     name: "Check Formatting"
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@v5"
+      - uses: "actions/checkout@v6"
       - name: "Check Formatting"
         run: |
           cargo fmt --all --check
@@ -58,7 +58,7 @@ jobs:
     container:
       image: "alpine:latest"
     steps:
-      - uses: "actions/checkout@v5"
+      - uses: "actions/checkout@v6"
       - name: "Install yamllint"
         run: |
           apk add yamllint
@@ -71,7 +71,7 @@ jobs:
     container:
       image: "node:latest"
     steps:
-      - uses: "actions/checkout@v5"
+      - uses: "actions/checkout@v6"
       - name: "Install markdownlint-cli"
         run: |
           npm install -g markdownlint-cli
