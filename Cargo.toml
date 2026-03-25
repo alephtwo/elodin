@@ -5,6 +5,6 @@ edition = "2024"
 authors = ["Ben Christianson <thhuntertgm@gmail.com>"]
 
 [dependencies]
-clap = { version = "4.5.60", features = ["cargo"] }
+clap = { version = "4.6.0", features = ["cargo"] }
 inflector-plus = "0.11.7"
 rand = "0.10.0"
