@@ -1,34 +1,14 @@
-#[macro_use]
-extern crate clap;
-extern crate inflector;
-extern crate rand;
-
-use clap::{Arg, Command};
+use clap::Parser;
 use inflector::Inflector;
 use rand::rng;
 use rand::seq::IndexedRandom;
 
 fn main() {
-    let matches = Command::new(crate_name!())
-        .about(crate_description!())
-        .version(crate_version!())
-        .author(crate_authors!())
-        .arg(
-            Arg::new("slug")
-                .short('s')
-                .long("slug")
-                .num_args(0)
-                .help("Generate a slug instead of a name"),
-        )
-        .get_matches();
-
-    let slug = matches.get_flag("slug");
-    let joiner = if slug { "-" } else { " " };
-
+    let args = Cli::parse();
     let words: Vec<String> = generate()
         .iter()
         .map(|w| {
-            if slug {
+            if args.slug {
                 w.to_lowercase().replace(' ', "-").replace('\'', "")
             } else {
                 w.to_title_case()
@@ -36,7 +16,7 @@ fn main() {
         })
         .collect();
 
-    println!("{}", words.join(joiner))
+    println!("{}", words.join(if args.slug { "-" } else { " " }))
 }
 
 fn generate() -> Vec<&'static str> {
@@ -46,10 +26,14 @@ fn generate() -> Vec<&'static str> {
 }
 
 fn choose_word_from_file(text: &str) -> &str {
-    let words = text.trim().split('\n').collect();
-    choose_random_word(words)
+    let words: Vec<&str> = text.trim().split('\n').collect();
+    words.choose(&mut rng()).unwrap_or(&"")
 }
 
-fn choose_random_word(words: Vec<&str>) -> &str {
-    words.choose(&mut rng()).unwrap_or(&"")
+#[derive(Parser)]
+#[command(version, about)]
+struct Cli {
+    /// Generate a slug instead of a name
+    #[arg(long, short = 's')]
+    slug: bool,
 }
